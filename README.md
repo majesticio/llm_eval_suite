@@ -83,6 +83,8 @@ pipenv install
 pipenv shell
 ```
 
+You need to have [Ollama](https://github.com/ollama/ollama) running on your machine or on a remote server.
+
 ### **2. Running Evaluations**
 
 To evaluate a model on multiple datasets, you can use the `main.py` script.
