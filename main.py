@@ -18,10 +18,11 @@ def main():
     parser.add_argument('--model', type=str, required=True, help='Model name to evaluate')
     parser.add_argument('--evaluations', nargs='+', default=['boolq', 'hellaswag', 'winogrande', 'rte', 'piqa', 'commonsenseqa', 'multirc', 'arc', 'cb'], help='List of evaluations to run')
     parser.add_argument('--sample-size', type=int, default=None, help='Number of samples to evaluate from each dataset')
+    parser.add_argument('--custom-client-host', type=str, default=None, help='Host for custom client (if not specified, uses standard module)')
     args = parser.parse_args()
 
     # Load the model
-    model = ModelWrapper(args.model)
+    model = ModelWrapper(args.model, custom_client_host=args.custom_client_host)
 
     # Dictionary mapping evaluation names to functions
     evaluation_functions = {

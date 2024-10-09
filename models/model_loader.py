@@ -1,17 +1,30 @@
 # models/model_loader.py
 
-from ollama import Client
+import ollama
 
 class ModelWrapper:
-    def __init__(self, model_name):
+    def __init__(self, model_name, custom_client_host=None):
         self.model_name = model_name
-        self.client = Client(host='http://192.168.5.85:11434')
+        if custom_client_host:
+            # Use custom client
+            self.client = ollama.Client(host=custom_client_host)
+            self.use_custom_client = True
+        else:
+            # Use standard module
+            self.client = None  # Will use the standard module
+            self.use_custom_client = False
 
     def chat(self, prompt):
-        response = self.client.chat(model=self.model_name, messages=[
+        messages = [
             {
                 'role': 'user',
                 'content': prompt,
             },
-        ])
-        return response['message']['content']
+        ]
+        if self.use_custom_client:
+            response = self.client.chat(model=self.model_name, messages=messages)
+            content = response['message']['content']
+        else:
+            response = ollama.chat(model=self.model_name, messages=messages)
+            content = response['message']['content']
+        return content

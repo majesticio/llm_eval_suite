@@ -1,6 +1,6 @@
 # **LLM Evaluation Suite**
 ----------
-*Easily test open source LLMs using Ollama*
+*Easily evaluate open source LLMs using Ollama and Hugging Face datasets*
 
 This project provides a comprehensive testing suite to evaluate large language models (LLMs) on a wide range of natural language understanding tasks. The suite includes evaluations that cover commonsense reasoning, reading comprehension, textual entailment, and other advanced language tasks.
 
@@ -114,10 +114,18 @@ Evaluate the model `mixtral` on BoolQ, PIQA, and WinoGrande with 50 samples from
 python main.py --model mixtral --evaluations boolq piqa winogrande --sample-size 50
 ```
 
-Run the complete dataset on all evaluations and save the results:
+Run the complete dataset of all evaluations and save the results:
 
 ```bash
-python main.py --model mixtral > results/results.log
+python main.py --model mixtral > results/mixtral_eval.log
+```
+
+#### **Custom client**
+if you are hosting ollama as a service on another device, you can use a custom client by passing the IP and port of the service.
+For example:
+
+```
+python main.py --model phi3:14b --evaluations boolq --custom-client-host http://10.200.200.1:11434
 ```
 
 This will evaluate the model on the specified datasets and display the accuracy for each.
@@ -146,7 +154,6 @@ We would like to thank the creators of the datasets used in this project, as wel
 
 ---
 
-This README provides a clear description of the suite’s functionality, the included evaluations, and how to use the testing suite. You can expand on it as needed or customize it to fit your project's style. Let me know if you need any adjustments!
 ```
 testing_suite/
 ├── evaluations/
