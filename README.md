@@ -155,7 +155,7 @@ We would like to thank the creators of the datasets used in this project, as wel
 ---
 
 ```
-testing_suite/
+llm_eval_suite/
 ├── evaluations/
 │   ├── boolq_eval.py
 │   └── hellaswag_eval.py
