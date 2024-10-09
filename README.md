@@ -114,6 +114,8 @@ Evaluate the model `mixtral` on BoolQ, PIQA, and WinoGrande with 50 samples from
 python main.py --model mixtral --evaluations boolq piqa winogrande --sample-size 50
 ```
 
+*Not using the `--evaluation` flag will default to all available evals.*
+
 Run the complete dataset of all evaluations and save the results:
 
 ```bash
@@ -127,8 +129,6 @@ For example:
 ```
 python main.py --model phi3:14b --evaluations boolq --custom-client-host http://10.200.200.1:11434
 ```
-
-This will evaluate the model on the specified datasets and display the accuracy for each.
 
 ### **3. Adding More Evaluations**
 
