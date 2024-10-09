@@ -121,7 +121,7 @@ python main.py --model mixtral > results/mixtral_eval.log
 ```
 
 #### **Custom client**
-if you are hosting ollama as a service on another device, you can use a custom client by passing the IP and port of the service.
+if you are hosting ollama as a service on another device, you can use a custom client by passing the IP and port of the service using the `--custom-client-host` flag.
 For example:
 
 ```
