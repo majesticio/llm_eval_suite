@@ -1,0 +1,36 @@
+Starting evaluation: boolq
+BoolQ Accuracy: 70.00%
+boolq Accuracy: 70.00%
+
+Starting evaluation: hellaswag
+HellaSwag Accuracy: 80.00%
+hellaswag Accuracy: 80.00%
+
+Starting evaluation: winogrande
+WinoGrande Accuracy: 50.00%
+winogrande Accuracy: 50.00%
+
+Starting evaluation: rte
+RTE Accuracy: 10.00%
+rte Accuracy: 10.00%
+
+Starting evaluation: piqa
+PIQA Accuracy: 50.00%
+piqa Accuracy: 50.00%
+
+Starting evaluation: commonsenseqa
+CommonSenseQA Accuracy: 70.00%
+commonsenseqa Accuracy: 70.00%
+
+Starting evaluation: multirc
+MultiRC Accuracy: 40.00%
+multirc Accuracy: 40.00%
+
+Starting evaluation: arc
+ARC Accuracy: 80.00%
+arc Accuracy: 80.00%
+
+Starting evaluation: cb
+CB Accuracy: 90.00%
+cb Accuracy: 90.00%
+
